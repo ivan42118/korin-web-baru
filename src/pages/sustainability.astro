@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const bio = [
+  ['Lubrizol Pearlthane ECO 12T95', '32%'],
+  ['Covestro Desmopan EC33085AU DPS301', '39%'],
+  ['Covestro Desmopan EC33090AU DPS301', '36%'],
+  ['Covestro Desmopan EC33095AU DPS301', '35%'],
+];
+---
+<BaseLayout title="Sustainability — PT Korin Technomic" description="Bio-based raw materials and the KORINECO recycle extruder program." active="Sustainability">
+  <PageHeader eyebrow="Sustainability" title="Lower-impact materials, without compromise" description="Two parallel programs help your products meet rising environmental expectations." crumbs={[{ label: 'Sustainability' }]} />
+
+  <section class="section"><div class="wrap">
+    <div class="sust-grid">
+      <div class="sust-card">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#137a45" stroke-width="2"><path d="M5 21c0-9 6-15 16-16 0 10-6 16-16 16z"/><path d="M5 21c3-6 7-9 11-11"/></svg></div>
+        <h3>Bio-based Raw Materials</h3>
+        <p>We offer materials with high bio-based content from Lubrizol and Covestro &mdash; reducing fossil content without sacrificing performance.</p>
+        <span class="badge">Up to 39% bio-based content</span>
+      </div>
+      <div class="sust-card">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#137a45" stroke-width="2"><path d="M7 4l3 3-3 3"/><path d="M17 20l-3-3 3-3"/><path d="M10 7H6a4 4 0 0 0 0 8h1M14 17h4a4 4 0 0 0 0-8h-1"/></svg></div>
+        <h3>KORINECO — Recycle Extruder</h3>
+        <p>Our in-house recycle extruding process stabilizes recycled material so it performs predictably:</p>
+        <ul style="margin:12px 0 0 18px;color:var(--steel);font-size:14.5px;line-height:1.8">
+          <li>Higher percentage of recycled material</li>
+          <li>Consistent, stable color</li>
+          <li>Quality that can be tested</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tbl-card" style="margin-top:34px">
+      <div class="h">Bio-based material options <span>Bio-based content</span></div>
+      <table class="wf">
+        <tr><th>Material</th><th>Bio-based content</th></tr>
+        {bio.map(([m, v]) => (<tr><td>{m}</td><td style="font-weight:700;color:#137a45">{v}</td></tr>))}
+      </table>
+    </div>
+  </div></section>
+
+  <section class="section final"><div class="wrap">
+    <h2>Building a more sustainable product?</h2>
+    <p>Ask us about bio-based and recycled options for your components.</p>
+    <div class="cta"><a class="btn btn-red" href="/contact">Request a Quote &rarr;</a></div>
+  </div></section>
+</BaseLayout>

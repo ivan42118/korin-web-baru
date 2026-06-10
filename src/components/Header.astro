@@ -1,0 +1,31 @@
+---
+interface Props { variant?: 'solid' | 'transparent'; active?: string; }
+const { variant = 'solid', active = '' } = Astro.props;
+const items = [
+  { label: 'About', href: '/about' },
+  { label: 'Capabilities', href: '/capabilities', has: true },
+  { label: 'Products', href: '/products' },
+  { label: 'Materials', href: '/materials' },
+  { label: 'Sustainability', href: '/sustainability' },
+  { label: 'Locations', href: '/locations' },
+];
+---
+<header class:list={['site-header', variant]}>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="/">
+        <img class="logo" src="/images/logo-korin.png" alt="PT Korin Technomic" width="42" height="42" />
+        <span>KORIN<small>Technomic</small></span>
+      </a>
+      <div class="menu" id="menu">
+        {items.map((it) => (
+          <a href={it.href} class:list={[{ has: it.has, active: active === it.label }]}>{it.label}</a>
+        ))}
+      </div>
+      <div class="right">
+        <a class="btn btn-red" href="/contact">Request a Quote</a>
+        <div class="hamb" id="hamb"><i></i><i></i><i></i></div>
+      </div>
+    </nav>
+  </div>
+</header>

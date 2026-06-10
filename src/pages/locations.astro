@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+<BaseLayout title="Facilities & Locations — PT Korin Technomic" description="Two factories in Indonesia: Tangerang (head office) and Cirebon." active="Locations">
+  <PageHeader eyebrow="Facilities" title="Two factories, one standard of quality" description="PT Korin Technomic operates two production facilities in Indonesia." crumbs={[{ label: 'Locations' }]} />
+
+  <section class="section"><div class="wrap">
+    <div class="row">
+      <div class="media"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Map + photo</span><span class="cap">Tangerang</span></div></div>
+      <div>
+        <span class="role" style="color:var(--red);font-family:Archivo;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase">Head Office · Development · Injection</span>
+        <h2>Tangerang</h2>
+        <p>Desa Cukanggalih RT.04 RW.02, Kec. Curug, Kab. Tangerang, Banten, Indonesia.</p>
+        <div class="facts" style="margin-top:16px"><span class="fact">&#9742; (021) 5986501</span><span class="fact">Fax (021) 5986574</span></div>
+      </div>
+    </div>
+    <div class="row rev" style="margin-top:64px">
+      <div class="media"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Map + photo</span><span class="cap">Cirebon</span></div></div>
+      <div>
+        <span class="role" style="color:var(--red);font-family:Archivo;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase">Injection · EVA · Rattan Extruder</span>
+        <h2>Cirebon</h2>
+        <p>Blok Mirok RT.005/RW.003, Kepuh, Kec. Palimanan, Kab. Cirebon, Jawa Barat 45161, Indonesia.</p>
+        <div class="facts" style="margin-top:16px"><span class="fact">&#9742; (0231) 247065</span><span class="fact">Fax (0231) 247101</span></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section final"><div class="wrap">
+    <h2>Let&rsquo;s talk.</h2>
+    <p>Reach our team at either facility, or send an inquiry online.</p>
+    <div class="cta"><a class="btn btn-red" href="/contact">Contact Us &rarr;</a><a class="btn btn-ghost" href="https://wa.me/" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+  </div></section>
+</BaseLayout>

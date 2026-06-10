@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Viewer3D from '../components/Viewer3D.astro';
+---
+<BaseLayout title="Products & Applications — PT Korin Technomic" description="Precision shoe and accessory components, viewable in interactive 3D. Plain, unbranded." active="Products">
+  <PageHeader eyebrow="Products &amp; Applications" title="Components that build better footwear" description="Precision shoe and accessory parts, molded to spec across a wide material range." crumbs={[{ label: 'Products' }]} />
+
+  <!-- Interactive 3D -->
+  <section class="section"><div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Interactive 3D</span>
+      <h2>Explore our components in 3D</h2>
+      <p>Drag to rotate, scroll to zoom. Clean, unbranded models &mdash; so buyers see the part and its detail, never a client&rsquo;s logo.</p>
+    </div>
+    <Viewer3D />
+    <p class="lead-p" style="font-size:14px;margin-top:14px;color:var(--steel)">This is a demo model for preview. Real 3D models of Korin components (heel counters, outsoles, shanks) will replace it once prepared from 3D scans or mold/CAD data.</p>
+  </div></section>
+
+  <!-- Plain photo gallery (placeholder) -->
+  <section class="section sust"><div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Product gallery</span>
+      <h2>Plain product photography</h2>
+      <p>A clean, unbranded gallery (no client logos) is being curated from the photo library &mdash; grouped by component type.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Outsole</b><span>TPR &middot; TPU</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Heel Counter</b><span>Nylon6</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Shank</b><span>Fiber Glass</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Toe Cap</b><span>PP</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Heel Patch</b><span>TPU</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Eyestay</b><span>TPU</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>EVA Midsole</b><span>EVA</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Strap</b><span>TPU</span></div></div>
+    </div>
+    <p class="lead-p" style="font-size:14px;margin-top:18px;color:var(--steel)">Note: current photos contain client branding (Adidas, New Balance, etc.) which won&rsquo;t be shown. We&rsquo;ll use only logo-free shots, light retouching, or 3D renders.</p>
+  </div></section>
+
+  <section class="section final"><div class="wrap">
+    <h2>Request a sample or quote.</h2>
+    <p>Share your drawing or spec and our development team will respond with options and pricing.</p>
+    <div class="cta"><a class="btn btn-red" href="/contact">Request a Quote &rarr;</a><a class="btn btn-ghost" href="/capabilities">See our capabilities</a></div>
+  </div></section>
+</BaseLayout>

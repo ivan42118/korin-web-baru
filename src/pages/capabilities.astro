@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const machines = [
+  ['110 Ton', 7, 54], ['120 Ton', 8, 62], ['130 Ton', 5, 38], ['140 Ton', 10, 77],
+  ['150 Ton', 13, 100], ['160 Ton', 4, 31], ['198 Ton', 1, 8], ['480 Ton', 3, 23], ['850 Ton', 1, 8],
+];
+---
+<BaseLayout
+  title="Capabilities — PT Korin Technomic"
+  description="Plastic injection (horizontal, rotary, vertical, heavy), EVA injection, synthetic rattan extrusion, and in-house mold & tooling."
+  active="Capabilities"
+>
+  <PageHeader
+    eyebrow="What we do"
+    title="Manufacturing Capabilities"
+    description="From development and tooling to mass production and finishing, PT Korin Technomic covers the complete component journey across four core technologies."
+    crumbs={[{ label: 'Capabilities' }]}
+  >
+    <div class="qnav">
+      <a href="#injection">Plastic Injection</a>
+      <a href="#eva">EVA Injection</a>
+      <a href="#rattan">Synthetic Rattan</a>
+      <a href="#mold">Mold &amp; Tooling</a>
+    </div>
+  </PageHeader>
+
+  <div class="stats four"><div class="wrap">
+    <div class="stat"><b>52+</b><span>Horizontal injection machines</span></div>
+    <div class="stat"><b>110&ndash;850</b><span>Ton clamping range</span></div>
+    <div class="stat"><b>4</b><span>Injection technologies</span></div>
+    <div class="stat"><b>2</b><span>Production facilities</span></div>
+  </div></div>
+
+  <!-- Plastic Injection -->
+  <section class="section" id="injection"><div class="wrap">
+    <div class="row">
+      <div class="media"><div class="img"><img src="/images/mesin_injection.jpg" alt="Horizontal plastic injection machines" loading="lazy" /></div></div>
+      <div>
+        <span class="eyebrow">Core capability</span>
+        <h2>Plastic Injection</h2>
+        <p>Our main production capability, covering horizontal, rotary, vertical and heavy injection. With a wide clamping range, we mold precision shoe components consistently and at scale.</p>
+        <div class="facts"><span class="fact">Horizontal &middot; Rotary &middot; Vertical &middot; Heavy</span><span class="fact red">52 horizontal machines</span><span class="fact">110&ndash;850 tons</span></div>
+        <div class="tags">
+          <span class="tag-p">Outsole</span><span class="tag-p">Heel stabilizer</span><span class="tag-p">Heel patch</span>
+          <span class="tag-p">Shank</span><span class="tag-p">Toe cap</span><span class="tag-p">Eyelet</span><span class="tag-p">Eyestay</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-card">
+      <div class="h">Horizontal Injection &mdash; Machine Fleet <span>Total: 52 units</span></div>
+      <table class="wf">
+        <tr><th>Clamping force</th><th>Units</th><th style="width:42%">Share</th></tr>
+        {machines.map(([t, u, w]) => (
+          <tr><td>{t}</td><td>{u}</td><td><div class="bar"><i style={`width:${w}%`}></i></div></td></tr>
+        ))}
+        <tr><td class="tot">Total</td><td class="tot">52</td><td class="tot"></td></tr>
+      </table>
+    </div>
+    <p style="color:var(--steel);font-size:13px;margin-top:12px">Figures from the current site &mdash; to be re-validated with the production team before publishing.</p>
+  </div></section>
+
+  <!-- EVA -->
+  <section class="section sust" id="eva"><div class="wrap">
+    <div class="row rev">
+      <div class="media"><div class="img"><img src="/images/mesin_eva.jpg" alt="EVA injection machine" loading="lazy" /></div></div>
+      <div>
+        <span class="eyebrow">Lightweight cushioning</span>
+        <h2>EVA Injection</h2>
+        <p>Lightweight, resilient EVA components engineered for midsoles and cushioning applications &mdash; combining comfort, durability and consistent density.</p>
+        <div class="facts"><span class="fact">Midsole</span><span class="fact">Cushioning</span><span class="fact">Low density</span></div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- Rattan -->
+  <section class="section" id="rattan"><div class="wrap">
+    <div class="row">
+      <div class="media"><div class="img"><img src="/images/mesin_rotan.jpg" alt="Synthetic rattan extruder" loading="lazy" /></div></div>
+      <div>
+        <span class="eyebrow">Extrusion</span>
+        <h2>Synthetic Rattan</h2>
+        <p>Durable synthetic rattan profiles produced at our Cirebon facility &mdash; for furniture, weaving and outdoor applications that demand weather resistance and consistency.</p>
+        <div class="facts"><span class="fact">Furniture</span><span class="fact">Weaving</span><span class="fact">Outdoor-grade</span></div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- Mold -->
+  <section class="section sust" id="mold"><div class="wrap">
+    <div class="row rev">
+      <div class="media"><div class="img"><img src="/images/mold_room.jpg" alt="In-house mold shop" loading="lazy" /></div></div>
+      <div>
+        <span class="eyebrow">Tooling support</span>
+        <h2>Mold &amp; Tooling</h2>
+        <p>An in-house mold shop keeps tooling maintenance fast and on-site &mdash; minimizing downtime during production and protecting your lead times. Equipment includes sandblast, argon welding, drilling and milling.</p>
+        <div class="facts"><span class="fact red">Rapid maintenance</span><span class="fact">On-site repair</span><span class="fact">Less downtime</span></div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- Final CTA -->
+  <section class="section final"><div class="wrap">
+    <h2>Have a part in mind?</h2>
+    <p>Send us your drawing or spec &mdash; our development team will recommend the right technology, material, and tooling, with a quote.</p>
+    <div class="cta">
+      <a class="btn btn-red" href="/contact">Request a Quote &rarr;</a>
+      <a class="btn btn-ghost" href="https://wa.me/" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </div></section>
+</BaseLayout>

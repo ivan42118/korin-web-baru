@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout headerVariant="transparent">
+  <!-- Hero (background video) -->
+  <section class="hero has-video">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/images/hero-poster.jpg">
+      <source src="/images/video_hero.mp4" type="video/mp4" />
+    </video>
+    <div class="inner">
+      <span class="eyebrow">Manufacturing Partner &middot; Since 1999</span>
+      <h1>Engineered to <span class="hl">exceed</span><br/>your expectations</h1>
+      <p class="lead">An Indonesian manufacturing partner for plastic injection, EVA, synthetic rattan, molds, and shoe &amp; accessory components &mdash; built on speed, quality, competitive price, and innovation.</p>
+      <div class="cta">
+        <a class="btn btn-red" href="/contact">Request a Quote &rarr;</a>
+        <a class="btn btn-ghost" href="/capabilities">Explore Capabilities</a>
+      </div>
+    </div>
+    <div class="scrollcue">Scroll
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats"><div class="wrap">
+    <div class="stat"><b>1999</b><span>Established</span></div>
+    <div class="stat"><b>2</b><span>Factories &middot; Tangerang &amp; Cirebon</span></div>
+    <div class="stat"><b>52<span class="u">+</span></b><span>Horizontal injection machines</span></div>
+    <div class="stat"><b>9<span class="u">+</span></b><span>Engineering materials</span></div>
+    <div class="stat"><b>14</b><span>In-house QA instruments</span></div>
+  </div></div>
+
+  <!-- Capabilities -->
+  <section class="section"><div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">What we do</span>
+      <h2>Full manufacturing capabilities under one partner</h2>
+      <p>From development and tooling to mass production and finishing &mdash; Korin covers the complete component journey.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap"><div class="img"><img src="/images/mesin_injection.jpg" alt="Plastic injection machines at PT Korin Technomic" loading="lazy" /></div>
+        <div class="body"><h3>Plastic Injection</h3><p>Horizontal, rotary, vertical &amp; heavy injection. 52 horizontal machines, 110&ndash;850 tons.</p><a class="more" href="/capabilities">Learn more &rarr;</a></div></div>
+      <div class="cap"><div class="img"><img src="/images/mesin_eva.jpg" alt="EVA injection machine" loading="lazy" /></div>
+        <div class="body"><h3>EVA Injection</h3><p>Lightweight, resilient EVA components for midsoles and cushioning applications.</p><a class="more" href="/capabilities">Learn more &rarr;</a></div></div>
+      <div class="cap"><div class="img"><img src="/images/mesin_rotan.jpg" alt="Synthetic rattan extruder" loading="lazy" /></div>
+        <div class="body"><h3>Synthetic Rattan</h3><p>Durable rattan extrusion for furniture, weaving and outdoor applications.</p><a class="more" href="/capabilities">Learn more &rarr;</a></div></div>
+      <div class="cap"><div class="img"><img src="/images/mold_room.jpg" alt="In-house mold shop" loading="lazy" /></div>
+        <div class="body"><h3>Mold &amp; Tooling</h3><p>In-house mold shop for rapid maintenance and minimal production downtime.</p><a class="more" href="/capabilities">Learn more &rarr;</a></div></div>
+    </div>
+  </div></section>
+
+  <!-- Pillars -->
+  <section class="section pillars"><div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow">Why Korin</span>
+      <h2>Four commitments behind every part we make</h2>
+      <p>Speed, Quality, Price and Innovation aren&rsquo;t a slogan &mdash; they&rsquo;re backed by our facilities and process.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pill"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2L3 14h8l-1 8 11-14h-8l0-6z"/></svg></div>
+        <h3>Speed</h3><p>In-house mold shop and lab enable faster iteration and shorter lead times.</p></div>
+      <div class="pill"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Quality</h3><p>Every batch is tested across 14+ laboratory instruments before it ships.</p></div>
+      <div class="pill"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20 12l-8 8-9-9V3h8l9 9z"/><circle cx="7.5" cy="7.5" r="1.5" fill="#fff"/></svg></div>
+        <h3>Price</h3><p>Efficient production and KORINECO recycling keep your costs competitive.</p></div>
+      <div class="pill"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></div>
+        <h3>Innovation</h3><p>A dedicated development team and bio-based materials move your products forward.</p></div>
+    </div>
+  </div></section>
+
+  <!-- Products (placeholder until gallery is built) -->
+  <section class="section"><div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Products &amp; Applications</span>
+      <h2>Components that build better footwear</h2>
+      <p>Precision shoe and accessory parts, molded to spec across a wide material range.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div></div><div class="meta"><b>Outsole</b><span>TPR &middot; TPU</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div></div><div class="meta"><b>Heel Stabilizer</b><span>Nylon6</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div></div><div class="meta"><b>Shank</b><span>Fiber Glass</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div></div><div class="meta"><b>Toe Cap</b><span>PP</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div></div><div class="meta"><b>Heel Patch</b><span>TPU</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div></div><div class="meta"><b>Eyelet</b><span>Surlyn</span></div></div>
+      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div></div><div class="meta"><b>Eyestay</b><span>TPU</span></div></div>
+      <a class="prod more-card" href="/products"><div style="text-align:center"><b style="font-family:Archivo;color:var(--blue);font-size:16px">View all &rarr;</b><span style="display:block;font-size:12px;color:#5b86bd">Full catalog</span></div></a>
+    </div>
+  </div></section>
+
+  <!-- Materials -->
+  <section class="section sust"><div class="wrap center">
+    <span class="eyebrow">Materials we handle</span>
+    <h2 style="font-size:32px;margin:12px auto 20px;max-width:680px">A broad material range, matched to your application</h2>
+    <div class="chips" style="justify-content:center">
+      <span class="chip">TPU</span><span class="chip">Pebax</span><span class="chip">TPR</span><span class="chip">Nylon6</span>
+      <span class="chip">EVA</span><span class="chip">Fiber Glass</span><span class="chip">PP</span><span class="chip">Surlyn</span><span class="chip">TR</span>
+      <span class="chip dashed">+ more</span>
+    </div>
+  </div></section>
+
+  <!-- Sustainability -->
+  <section class="section"><div class="wrap">
+    <div class="shead">
+      <span class="eyebrow" style="color:#137a45">Sustainability</span>
+      <h2>Lower-impact materials, without compromise</h2>
+      <p>Two parallel programs help your products meet rising environmental expectations.</p>
+    </div>
+    <div class="sust-grid">
+      <div class="sust-card">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#137a45" stroke-width="2"><path d="M5 21c0-9 6-15 16-16 0 10-6 16-16 16z"/><path d="M5 21c3-6 7-9 11-11"/></svg></div>
+        <h3>Bio-based Raw Materials</h3>
+        <p>High bio-content TPU options from Lubrizol Pearlthane ECO and Covestro Desmopan &mdash; without sacrificing performance.</p>
+        <span class="badge">Up to 39% bio-based content</span>
+      </div>
+      <div class="sust-card">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#137a45" stroke-width="2"><path d="M7 4l3 3-3 3"/><path d="M17 20l-3-3 3-3"/><path d="M10 7H6a4 4 0 0 0 0 8h1M14 17h4a4 4 0 0 0 0-8h-1"/></svg></div>
+        <h3>KORINECO &mdash; Recycle Extruder</h3>
+        <p>Our recycle extruding process stabilizes recycled material: higher recycle ratios, consistent color, and fully testable quality.</p>
+        <span class="badge">Stable &middot; Consistent &middot; Testable</span>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- Locations -->
+  <section class="section sust"><div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Facilities</span>
+      <h2>Two factories, one standard of quality</h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Map + photo</span></div>
+        <div class="body"><span class="role">Head Office &middot; Development &middot; Injection</span>
+          <h3>Tangerang</h3>
+          <p>Desa Cukanggalih, Kec. Curug, Kab. Tangerang, Banten, Indonesia.</p>
+          <div class="ph">&#9742; (021) 5986501</div></div></div>
+      <div class="loc"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Map + photo</span></div>
+        <div class="body"><span class="role">Injection &middot; Rattan Extruder &middot; EVA</span>
+          <h3>Cirebon</h3>
+          <p>Blok Mirok, Kepuh, Kec. Palimanan, Kab. Cirebon, Jawa Barat 45161.</p>
+          <div class="ph">&#9742; (0231) 247065</div></div></div>
+    </div>
+  </div></section>
+
+  <!-- Final CTA -->
+  <section class="section final"><div class="wrap">
+    <h2>Let&rsquo;s build your next component.</h2>
+    <p>Send us your drawing or spec &mdash; our development team will get back to you with options and a quote.</p>
+    <div class="cta">
+      <a class="btn btn-red" href="/contact">Request a Quote &rarr;</a>
+      <a class="btn btn-ghost" href="https://wa.me/" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </div></section>
+</BaseLayout>

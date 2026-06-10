@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const pillars = [
+  { t: 'Speed', red: true, p: 'In-house mold shop and laboratory enable faster iteration and shorter lead times.' },
+  { t: 'Quality', red: false, p: 'Every batch is tested across 14+ laboratory instruments before it ships.' },
+  { t: 'Price', red: true, p: 'Efficient production and KORINECO recycling keep your costs competitive.' },
+  { t: 'Innovation', red: false, p: 'A dedicated development team and bio-based materials move your products forward.' },
+];
+const timeline = [
+  { y: '1999', s: 'PT Korin Technomic established in Indonesia.' },
+  { y: '2015', s: 'Mission renewed: "exceed expectations".' },
+  { y: 'Cirebon', s: 'Second factory — injection, EVA & rattan extruder.' },
+  { y: 'Today', s: 'Bio-based materials & KORINECO recycling.' },
+];
+---
+<BaseLayout title="About — PT Korin Technomic" description="PT Korin Technomic — an Indonesian plastic injection and rattan manufacturer since 1999." active="About">
+  <PageHeader eyebrow="Company" title="About PT Korin Technomic" description="An Indonesian manufacturing partner that has served customers with innovative products at the best price, quality and speed since 1999." crumbs={[{ label: 'About' }]} />
+
+  <section class="section"><div class="wrap">
+    <div class="row">
+      <div class="media"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Photo</span><span class="cap">PT Korin Technomic facility</span></div></div>
+      <div>
+        <span class="eyebrow">Who we are</span>
+        <h2>A manufacturing partner since 1999</h2>
+        <p>PT Korin Technomic is an Indonesian plastic injection and rattan manufacturing company. We process a wide range of materials &mdash; TPU, Pebax, TPR, Nylon6, EVA, Fiber Glass, PP, Surlyn, TR and more &mdash; into precision components for the footwear and accessory industry.</p>
+        <p style="margin-top:14px">We operate two factories: <strong>Tangerang</strong> (head office, development and plastic injection) and <strong>Cirebon</strong> (plastic injection, EVA and rattan extruder).</p>
+      </div>
+    </div>
+  </div></section>
+
+  <div class="stats four"><div class="wrap">
+    <div class="stat"><b>1999</b><span>Established</span></div>
+    <div class="stat"><b>2</b><span>Factories</span></div>
+    <div class="stat"><b>52<span class="u">+</span></b><span>Injection machines</span></div>
+    <div class="stat"><b>9<span class="u">+</span></b><span>Engineering materials</span></div>
+  </div></div>
+
+  <section class="section pillars"><div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow">Our mission</span>
+      <h2>To exceed expectations</h2>
+      <p>Since 2015 our mission has been to exceed what customers expect &mdash; delivered through four commitments.</p>
+    </div>
+    <div class="pgrid">
+      {pillars.map((p) => (
+        <div class="pill">
+          <div class="ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>
+          </div>
+          <h3>{p.t}</h3><p>{p.p}</p>
+        </div>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="section"><div class="wrap">
+    <div class="shead"><span class="eyebrow">Our journey</span><h2>Milestones</h2></div>
+    <div class="timeline">
+      {timeline.map((t) => (<div class="tl-item"><b>{t.y}</b><span>{t.s}</span></div>))}
+    </div>
+  </div></section>
+
+  <section class="section sust"><div class="wrap">
+    <div class="shead"><span class="eyebrow">Facilities</span><h2>Inside our factories</h2></div>
+    <div class="gallery">
+      <div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Photo</span></div>
+      <div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Photo</span></div>
+      <div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Photo</span></div>
+      <div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Photo</span></div>
+    </div>
+  </div></section>
+
+  <section class="section final"><div class="wrap">
+    <h2>Work with a partner you can rely on.</h2>
+    <p>Tell us about your product and we will show you how Korin can help.</p>
+    <div class="cta"><a class="btn btn-red" href="/contact">Request a Quote &rarr;</a><a class="btn btn-ghost" href="/capabilities">Explore Capabilities</a></div>
+  </div></section>
+</BaseLayout>

@@ -1,0 +1,21 @@
+---
+interface Crumb { label: string; href?: string; }
+interface Props { title: string; eyebrow?: string; description?: string; crumbs?: Crumb[]; }
+const { title, eyebrow, description, crumbs = [] } = Astro.props;
+---
+<section class="phead">
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <div class="wrap"><div class="inner">
+    <div class="crumb">
+      <a href="/">Home</a>
+      {crumbs.map((c) => (
+        <Fragment><span>&rsaquo;</span>{c.href ? <a href={c.href}>{c.label}</a> : c.label}</Fragment>
+      ))}
+    </div>
+    {eyebrow && <span class="eyebrow" style="color:#8fbcf3">{eyebrow}</span>}
+    <h1>{title}</h1>
+    {description && <p>{description}</p>}
+    <slot />
+  </div></div>
+</section>

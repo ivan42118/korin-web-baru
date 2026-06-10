@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const materials = [
+  ['TPU', 'Tough, abrasion-resistant, flexible', 'Outsoles, heel patches, eyestays'],
+  ['Pebax', 'Lightweight, high-performance elastomer', 'Performance plates, stiffeners'],
+  ['TPR', 'Rubber-like, good grip & flexibility', 'Outsoles'],
+  ['Nylon6', 'Rigid, strong, heat-resistant', 'Heel stabilizers, shanks'],
+  ['EVA', 'Lightweight foam, cushioning', 'Midsoles'],
+  ['Fiber Glass', 'High-stiffness reinforcement', 'Shanks, structural parts'],
+  ['PP', 'Rigid, chemical-resistant', 'Toe caps, rigid parts'],
+  ['Surlyn', 'Tough, clear, resilient ionomer', 'Eyelets, covers'],
+  ['TR', 'Thermoplastic rubber', 'Flexible components'],
+];
+---
+<BaseLayout title="Materials — PT Korin Technomic" description="The engineering materials Korin handles: TPU, Pebax, TPR, Nylon6, EVA, Fiber Glass, PP, Surlyn, TR and more." active="Materials">
+  <PageHeader eyebrow="Materials" title="A broad material range, matched to your application" description="We work across a wide range of engineering polymers and elastomers, selecting the right one for each part's performance, weight and cost." crumbs={[{ label: 'Materials' }]} />
+
+  <section class="section"><div class="wrap">
+    <div class="chips" style="margin-bottom:8px">
+      <span class="chip">TPU</span><span class="chip">Pebax</span><span class="chip">TPR</span><span class="chip">Nylon6</span>
+      <span class="chip">EVA</span><span class="chip">Fiber Glass</span><span class="chip">PP</span><span class="chip">Surlyn</span><span class="chip">TR</span>
+      <span class="chip dashed">+ more</span>
+    </div>
+
+    <div class="tbl-card">
+      <div class="h">Materials &amp; typical applications <span>Indicative — confirm with our technical team</span></div>
+      <table class="wf">
+        <tr><th>Material</th><th>Characteristics</th><th>Typical applications</th></tr>
+        {materials.map(([m, c, a]) => (<tr><td style="font-weight:700;color:var(--navy-900)">{m}</td><td>{c}</td><td>{a}</td></tr>))}
+      </table>
+    </div>
+    <p class="lead-p" style="font-size:15px;margin-top:18px">Looking for lower-impact options? See our <a class="link-blue" href="/sustainability">bio-based and recycled materials</a>.</p>
+  </div></section>
+
+  <section class="section final"><div class="wrap">
+    <h2>Not sure which material fits?</h2>
+    <p>Our development team will recommend the right material for your part&rsquo;s performance and budget.</p>
+    <div class="cta"><a class="btn btn-red" href="/contact">Talk to our team &rarr;</a></div>
+  </div></section>
+</BaseLayout>

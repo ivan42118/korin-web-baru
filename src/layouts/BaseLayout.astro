@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  headerVariant?: 'solid' | 'transparent';
+  active?: string;
+}
+const {
+  title = 'PT Korin Technomic — Precision Manufacturing Partner',
+  description = 'An Indonesian manufacturing partner for plastic injection, EVA, synthetic rattan, molds, and shoe & accessory components. Speed, quality, price, innovation since 1999.',
+  headerVariant = 'solid',
+  active = '',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <Header variant={headerVariant} active={active} />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+
+  <a class="wa" href="https://wa.me/" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1z"/></svg>
+  </a>
+
+  <script>
+    const hdr = document.querySelector('.site-header');
+    if (hdr) {
+      const transparent = hdr.classList.contains('transparent');
+      const threshold = transparent ? 80 : 20;
+      const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > threshold);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+    const hamb = document.getElementById('hamb');
+    const menu = document.getElementById('menu');
+    if (hamb && menu) hamb.addEventListener('click', () => menu.classList.toggle('open'));
+  </script>
+</body>
+</html>

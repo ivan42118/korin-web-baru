@@ -1,0 +1,15 @@
+# dependencies & build
+node_modules/
+dist/
+.astro/
+
+# os / editor junk
+.DS_Store
+Thumbs.db
+*.log
+.env
+
+# heavy raw photo dump — curate selected images before committing
+public/images/Foto Item/
+# stray office files
+*.xlsx
