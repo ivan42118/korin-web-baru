@@ -301,3 +301,7 @@ table.wf .tot{font-family:'Archivo';font-weight:800;color:var(--navy-900);backgr
 .img>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
 .img.contain{background:#fff}
 .img.contain>img{object-fit:contain;padding:10px}
+
+/* ============ Map embed (Locations) ============ */
+.map-embed{width:100%;height:360px;border:1px solid var(--line);border-radius:16px;margin-top:20px;display:block}
+@media(max-width:560px){.map-embed{height:280px}}

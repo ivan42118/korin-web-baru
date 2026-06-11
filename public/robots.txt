@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ptkorintechnomic.com/sitemap-index.xml

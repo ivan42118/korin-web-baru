@@ -1,29 +1,39 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
+
+const mapTangerang = 'https://www.google.com/maps?q=-6.2482415,106.5394194&z=16&output=embed';
+const mapCirebon = 'https://www.google.com/maps?q=-6.740087,108.4204502&z=16&output=embed';
 ---
-<BaseLayout title="Facilities & Locations — PT Korin Technomic" description="Two factories in Indonesia: Tangerang (head office) and Cirebon." active="Locations">
+<BaseLayout title="Facilities & Locations — PT Korin Technomic" description="Two production facilities in Indonesia: Tangerang (head office, development, injection) and Cirebon (injection, EVA, rattan extruder)." active="Locations">
   <PageHeader eyebrow="Facilities" title="Two factories, one standard of quality" description="PT Korin Technomic operates two production facilities in Indonesia." crumbs={[{ label: 'Locations' }]} />
 
-  <section class="section"><div class="wrap">
+  <section class="section" id="tangerang"><div class="wrap">
     <div class="row">
-      <div class="media"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Map + photo</span><span class="cap">Tangerang</span></div></div>
+      <div class="media"><div class="img"><img src="/images/korin_tangerang.jpg" alt="PT Korin Technomic — Tangerang facility" loading="lazy" /></div></div>
       <div>
-        <span class="role" style="color:var(--red);font-family:Archivo;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase">Head Office · Development · Injection</span>
+        <span class="eyebrow" style="color:var(--red)">Head Office &middot; Development &middot; Injection</span>
         <h2>Tangerang</h2>
         <p>Desa Cukanggalih RT.04 RW.02, Kec. Curug, Kab. Tangerang, Banten, Indonesia.</p>
-        <div class="facts" style="margin-top:16px"><span class="fact">&#9742; (021) 5986501</span><span class="fact">Fax (021) 5986574</span></div>
+        <div class="facts" style="margin-top:14px"><span class="fact">&#9742; (021) 5986501</span><span class="fact">Fax (021) 5986574</span></div>
+        <a class="btn btn-out" href="https://maps.app.goo.gl/tqc55iFLSVcF86mJ6" target="_blank" rel="noopener" style="margin-top:16px">Open in Google Maps &rarr;</a>
       </div>
     </div>
-    <div class="row rev" style="margin-top:64px">
-      <div class="media"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Map + photo</span><span class="cap">Cirebon</span></div></div>
+    <iframe class="map-embed" src={mapTangerang} title="Map — Tangerang" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div></section>
+
+  <section class="section sust" id="cirebon"><div class="wrap">
+    <div class="row rev">
+      <div class="media"><div class="img"><img src="/images/korin_cirebon.jpg" alt="PT Korin Technomic — Cirebon facility" loading="lazy" /></div></div>
       <div>
-        <span class="role" style="color:var(--red);font-family:Archivo;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase">Injection · EVA · Rattan Extruder</span>
+        <span class="eyebrow" style="color:var(--red)">Injection &middot; EVA &middot; Rattan Extruder</span>
         <h2>Cirebon</h2>
         <p>Blok Mirok RT.005/RW.003, Kepuh, Kec. Palimanan, Kab. Cirebon, Jawa Barat 45161, Indonesia.</p>
-        <div class="facts" style="margin-top:16px"><span class="fact">&#9742; (0231) 247065</span><span class="fact">Fax (0231) 247101</span></div>
+        <div class="facts" style="margin-top:14px"><span class="fact">&#9742; (0231) 247065</span><span class="fact">Fax (0231) 247101</span></div>
+        <a class="btn btn-out" href="https://maps.app.goo.gl/pLH9Y4RAp1tvpRHJ6" target="_blank" rel="noopener" style="margin-top:16px">Open in Google Maps &rarr;</a>
       </div>
     </div>
+    <iframe class="map-embed" src={mapCirebon} title="Map — Cirebon" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div></section>
 
   <section class="section final"><div class="wrap">

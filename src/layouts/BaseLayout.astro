@@ -15,6 +15,25 @@ const {
   headerVariant = 'solid',
   active = '',
 } = Astro.props;
+
+const site = Astro.site ?? new URL('https://ptkorintechnomic.com');
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL('/images/hero-poster.jpg', site).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'PT Korin Technomic',
+  url: site.href,
+  logo: new URL('/images/logo-korin.png', site).href,
+  foundingDate: '1999',
+  description: 'Indonesian manufacturer specializing in plastic injection, EVA, synthetic rattan, molds, and shoe & accessory components.',
+  address: [
+    { '@type': 'PostalAddress', streetAddress: 'Desa Cukanggalih RT.04 RW.02, Kec. Curug', addressLocality: 'Kab. Tangerang', addressRegion: 'Banten', addressCountry: 'ID' },
+    { '@type': 'PostalAddress', streetAddress: 'Blok Mirok RT.005/RW.003, Kepuh, Kec. Palimanan', addressLocality: 'Kab. Cirebon', addressRegion: 'Jawa Barat', postalCode: '45161', addressCountry: 'ID' },
+  ],
+  telephone: '+62-21-5986501',
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -24,12 +43,25 @@ const {
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PT Korin Technomic" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 </head>
 <body>
   <Header variant={headerVariant} active={active} />
