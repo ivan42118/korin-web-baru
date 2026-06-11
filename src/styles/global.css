@@ -360,3 +360,11 @@ body{overflow-x:hidden}
   .brand small{display:none}
   .site-header .right .btn-red{padding:8px 11px;font-size:12px}
 }
+
+/* ============ Mobile navbar: CTA moves into the menu ============ */
+.menu-cta{display:none}
+@media(max-width:980px){
+  .site-header .nav .right .btn-red{display:none}
+  .site-header .menu a.menu-cta{display:flex;width:100%;justify-content:center;color:#fff !important;background:var(--red);border:none;border-radius:8px;margin-top:12px;padding:13px}
+  .site-header .menu a.menu-cta:hover{background:var(--red-dark)}
+}

@@ -21,6 +21,7 @@ const items = [
         {items.map((it) => (
           <a href={it.href} class:list={[{ has: it.has, active: active === it.label }]}>{it.label}</a>
         ))}
+        <a class="btn btn-red menu-cta" href="/contact">Request a Quote &rarr;</a>
       </div>
       <div class="right">
         <a class="btn btn-red" href="/contact">Request a Quote</a>
