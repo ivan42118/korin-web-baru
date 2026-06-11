@@ -1,45 +1,74 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
-import Viewer3D from '../components/Viewer3D.astro';
+
+const cats = [
+  { name: 'Outsoles', desc: 'Traction systems molded in TPR, TPU and rubber compounds — any pattern, any durometer.', tag: 'Any tread pattern', accent: '#0E2347', rev: false },
+  { name: 'Heel Counters', desc: 'Stability shells engineered from soft to rigid, in any geometry and thickness.', tag: 'Any geometry', accent: '#D7232E', rev: true },
+  { name: 'Quarters & Panels', desc: 'Decorated panels with transpaper, spray, gradients and special surface effects.', tag: 'Any finish', accent: '#1763C6', rev: false },
+  { name: 'EVA & Midsoles', desc: 'Lightweight cushioning molded at any density, shape and color.', tag: 'Any density', accent: '#2F84F0', rev: true },
+  { name: 'Heel Patches & Trims', desc: 'Logo parts, heel patches and trims, molded precisely to your spec.', tag: 'Made to spec', accent: '#0E2347', rev: false },
+  { name: 'Straps & Accessories', desc: 'Eyestays, straps and functional accessories for footwear and beyond.', tag: 'Custom designs', accent: '#D7232E', rev: true },
+];
+const tiles = [1, 2, 3, 4, 5, 6, 7, 8];
 ---
-<BaseLayout title="Products & Applications — PT Korin Technomic" description="Precision shoe and accessory components, viewable in interactive 3D. Plain, unbranded." active="Products">
-  <PageHeader eyebrow="Products &amp; Applications" title="Components that build better footwear" description="Precision shoe and accessory parts, molded to spec across a wide material range." crumbs={[{ label: 'Products' }]} />
+<BaseLayout title="Products & Applications — PT Korin Technomic" description="Korin develops and mass-produces fully customized footwear components across every category: outsoles, heel counters, quarters, EVA midsoles, trims and accessories." active="Products">
+  <PageHeader eyebrow="Products &amp; Applications" title="Any component. Any design." description="Across every category, Korin develops and mass-produces fully customized footwear components." crumbs={[{ label: 'Products' }]} />
 
-  <!-- Interactive 3D -->
+  <!-- Statement -->
   <section class="section"><div class="wrap">
-    <div class="shead">
-      <span class="eyebrow">Interactive 3D</span>
-      <h2>Explore our components in 3D</h2>
-      <p>Drag to rotate, scroll to zoom. Clean, unbranded models &mdash; so buyers see the part and its detail, never a client&rsquo;s logo.</p>
+    <div class="statement reveal">
+      <span class="eyebrow">Fully customized designs &amp; development</span>
+      <h2>We don&rsquo;t make <span class="hl">a</span> part.<br/>We make <span class="hl">your</span> part.</h2>
+      <p>From a single prototype to millions of pairs, Korin engineers and molds footwear components to your exact shape, finish, material and color — across every category below.</p>
     </div>
-    <Viewer3D />
-    <p class="lead-p" style="font-size:14px;margin-top:14px;color:var(--steel)">This is a demo model for preview. Real 3D models of Korin components (heel counters, outsoles, shanks) will replace it once prepared from 3D scans or mold/CAD data.</p>
+    <div class="bignums">
+      <div class="bignum reveal"><b>1999</b><span>Molding since</span></div>
+      <div class="bignum reveal"><b>2</b><span>Factories &middot; Tangerang &amp; Cirebon</span></div>
+      <div class="bignum reveal"><b>9+</b><span>Engineering materials</span></div>
+      <div class="bignum reveal"><b>6</b><span>Component categories</span></div>
+    </div>
   </div></section>
 
-  <!-- Plain photo gallery (placeholder) -->
-  <section class="section sust"><div class="wrap">
-    <div class="shead">
-      <span class="eyebrow">Product gallery</span>
-      <h2>Plain product photography</h2>
-      <p>A clean, unbranded gallery (no client logos) is being curated from the photo library &mdash; grouped by component type.</p>
-    </div>
-    <div class="prod-grid">
-      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Outsole</b><span>TPR &middot; TPU</span></div></div>
-      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Heel Counter</b><span>Nylon6</span></div></div>
-      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Shank</b><span>Fiber Glass</span></div></div>
-      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Toe Cap</b><span>PP</span></div></div>
-      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Heel Patch</b><span>TPU</span></div></div>
-      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Eyestay</b><span>TPU</span></div></div>
-      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>EVA Midsole</b><span>EVA</span></div></div>
-      <div class="prod"><div class="img"><div class="glow"></div><div class="lines"></div><span class="tag">Plain photo</span></div><div class="meta"><b>Strap</b><span>TPU</span></div></div>
-    </div>
-    <p class="lead-p" style="font-size:14px;margin-top:18px;color:var(--steel)">Note: current photos contain client branding (Adidas, New Balance, etc.) which won&rsquo;t be shown. We&rsquo;ll use only logo-free shots, light retouching, or 3D renders.</p>
-  </div></section>
+  <!-- Category showcases -->
+  {cats.map((c, ci) => (
+    <section class:list={['cat-band', { alt: ci % 2 === 1 }]}>
+      <div class="wrap">
+        <div class="cat-head reveal">
+          <div class="cat-accent" style={`background:${c.accent}`}></div>
+          <h3>{c.name}</h3>
+          <div class="row2">
+            <p class="cat-desc">{c.desc}</p>
+            <span class="cat-tag">{c.tag}</span>
+          </div>
+        </div>
+      </div>
+      <div class="marquee reveal">
+        <div class:list={['marquee-track', { rev: c.rev }]}>
+          {[0, 1].map(() => tiles.map((i) => (
+            <div class="vtile" style={`border-top:4px solid ${c.accent}`}>
+              <div class="glow"></div><div class="lines"></div>
+              <span class="idx">{String(i).padStart(2, '0')}</span>
+              <span class="vtag">Photo</span>
+              <span class="vlabel">Design {String(i).padStart(2, '0')}</span>
+            </div>
+          )))}
+        </div>
+      </div>
+    </section>
+  ))}
 
+  <!-- CTA -->
   <section class="section final"><div class="wrap">
-    <h2>Request a sample or quote.</h2>
-    <p>Share your drawing or spec and our development team will respond with options and pricing.</p>
+    <h2>Have a design in mind?</h2>
+    <p>Send us your drawing, sample or idea — our development team will turn it into a production-ready component.</p>
     <div class="cta"><a class="btn btn-red" href="/contact">Request a Quote &rarr;</a><a class="btn btn-ghost" href="/capabilities">See our capabilities</a></div>
   </div></section>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
 </BaseLayout>

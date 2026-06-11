@@ -305,3 +305,39 @@ table.wf .tot{font-family:'Archivo';font-weight:800;color:var(--navy-900);backgr
 /* ============ Map embed (Locations) ============ */
 .map-embed{width:100%;height:360px;border:1px solid var(--line);border-radius:16px;margin-top:20px;display:block}
 @media(max-width:560px){.map-embed{height:280px}}
+
+/* ============ Products: variety showcase (modern) ============ */
+.statement{text-align:center;max-width:880px;margin:0 auto}
+.statement h2{font-size:clamp(30px,4.6vw,52px);font-weight:900;letter-spacing:-.03em;margin:14px 0 16px}
+.statement h2 .hl{background:linear-gradient(90deg,var(--red),var(--blue-bright));-webkit-background-clip:text;background-clip:text;color:transparent}
+.statement p{font-size:18px;color:var(--steel);max-width:62ch;margin:0 auto}
+.bignums{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+.bignum{border:1px solid var(--line);border-radius:14px;padding:22px 14px;background:#fff;box-shadow:var(--shadow-sm);text-align:center}
+.bignum b{font-family:'Archivo';font-weight:900;font-size:38px;color:var(--navy-900);display:block;line-height:1}
+.bignum span{font-size:12.5px;color:var(--steel)}
+
+.cat-band{padding:56px 0;border-top:1px solid var(--line);overflow:hidden}
+.cat-band.alt{background:var(--bg)}
+.cat-accent{width:48px;height:5px;border-radius:3px;margin-bottom:14px}
+.cat-head h3{font-size:clamp(26px,3.6vw,42px);font-weight:800}
+.cat-head .row2{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-top:10px}
+.cat-desc{color:var(--steel);font-size:16px;max-width:52ch}
+.cat-tag{font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:20px;padding:8px 15px;white-space:nowrap}
+
+.marquee{overflow:hidden;margin-top:24px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.marquee-track{display:flex;gap:18px;width:max-content;animation:marq 46s linear infinite}
+.marquee-track.rev{animation-direction:reverse}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.vtile{flex:0 0 244px;height:172px;border-radius:14px;position:relative;overflow:hidden;background:linear-gradient(150deg,#16335f,#0c2244);border:1px solid var(--line);transition:transform .25s ease}
+.vtile:hover{transform:translateY(-7px)}
+.vtile .glow{position:absolute;inset:0;background:radial-gradient(220px 150px at 72% 18%,rgba(47,132,240,.4),transparent 60%)}
+.vtile .lines{position:absolute;inset:0;background-image:repeating-linear-gradient(125deg,rgba(255,255,255,.05) 0 2px,transparent 2px 18px)}
+.vtile .idx{position:absolute;top:10px;left:13px;font-family:'Archivo';font-weight:800;font-size:13px;color:rgba(255,255,255,.55);z-index:2}
+.vtile .vtag{position:absolute;top:10px;right:11px;background:rgba(8,24,47,.55);border:1px solid rgba(255,255,255,.18);color:#bcd0e8;font-size:9px;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:20px;z-index:2}
+.vtile .vlabel{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;font-family:'Archivo';font-weight:700;color:#fff;font-size:14px;background:linear-gradient(0deg,rgba(8,24,47,.92),transparent);z-index:2}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:760px){.bignums{grid-template-columns:1fr 1fr}.vtile{flex-basis:200px;height:150px}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.reveal{opacity:1;transform:none}}
