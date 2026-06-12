@@ -368,3 +368,15 @@ body{overflow-x:hidden}
   .site-header .menu a.menu-cta{display:flex;width:100%;justify-content:center;color:#fff !important;background:var(--red);border:none;border-radius:8px;margin-top:12px;padding:13px}
   .site-header .menu a.menu-cta:hover{background:var(--red-dark)}
 }
+
+/* ============ Home category cards (3-col) + Products combined gallery ============ */
+.cap-grid.three{grid-template-columns:repeat(3,1fr)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:16px}
+@media(max-width:980px){.cap-grid.three{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.gallery-grid{grid-template-columns:1fr 1fr}}
+
+/* ============ Product photo tiles (real images) ============ */
+.vtile.photo{background:#fff}
+.vtile.photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:16px;z-index:1}
+.img.product{background:#fff}
+.img.product>img{object-fit:contain;padding:12px}

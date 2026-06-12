@@ -3,19 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 
 const cats = [
-  { name: 'Outsoles', desc: 'Traction systems molded in TPR, TPU and rubber compounds — any pattern, any durometer.', tag: 'Any tread pattern', accent: '#0E2347', rev: false },
-  { name: 'Heel Counters', desc: 'Stability shells engineered from soft to rigid, in any geometry and thickness.', tag: 'Any geometry', accent: '#D7232E', rev: true },
-  { name: 'Quarters & Panels', desc: 'Decorated panels with transpaper, spray, gradients and special surface effects.', tag: 'Any finish', accent: '#1763C6', rev: false },
-  { name: 'EVA & Midsoles', desc: 'Lightweight cushioning molded at any density, shape and color.', tag: 'Any density', accent: '#2F84F0', rev: true },
-  { name: 'Heel Patches & Trims', desc: 'Logo parts, heel patches and trims, molded precisely to your spec.', tag: 'Made to spec', accent: '#0E2347', rev: false },
-  { name: 'Straps & Accessories', desc: 'Eyestays, straps and functional accessories for footwear and beyond.', tag: 'Custom designs', accent: '#D7232E', rev: true },
+  { name: 'Outsoles', desc: 'Traction systems molded in TPR, TPU and rubber compounds — any pattern, any durometer.', tag: 'Any tread pattern', accent: '#0E2347', rev: false, dir: 'product/Outsole',
+    images: ['outsole.png', 'OUTSOLE HALO.png', '20210419_132303-removebg-preview.png', 'SPERRY 4.png', 'sperry1.png', 'SUPERNOVA 2.0.png', 'IMG-20210419-WA0042-removebg-preview.png', 'OUTSOLE REEBOK.png'] },
+  { name: 'Heel Counters', desc: 'Stability shells engineered from soft to rigid, in any geometry and thickness.', tag: 'Any geometry', accent: '#D7232E', rev: true, dir: '', images: [] },
+  { name: 'Quarters & Panels', desc: 'Decorated panels with transpaper, spray, gradients and special surface effects.', tag: 'Any finish', accent: '#1763C6', rev: false, dir: '', images: [] },
+  { name: 'EVA & Midsoles', desc: 'Lightweight cushioning molded at any density, shape and color.', tag: 'Any density', accent: '#2F84F0', rev: true, dir: '', images: [] },
+  { name: 'Heel Patches & Trims', desc: 'Logo parts, heel patches and trims, molded precisely to your spec.', tag: 'Made to spec', accent: '#0E2347', rev: false, dir: '', images: [] },
+  { name: 'Straps & Accessories', desc: 'Eyestays, straps and functional accessories for footwear and beyond.', tag: 'Custom designs', accent: '#D7232E', rev: true, dir: '', images: [] },
 ];
 const tiles = [1, 2, 3, 4, 5, 6, 7, 8];
 ---
 <BaseLayout title="Products & Applications — PT Korin Technomic" description="Korin develops and mass-produces fully customized footwear components across every category: outsoles, heel counters, quarters, EVA midsoles, trims and accessories." active="Products">
   <PageHeader eyebrow="Products &amp; Applications" title="Any component. Any design." description="Across every category, Korin develops and mass-produces fully customized footwear components." crumbs={[{ label: 'Products' }]} />
 
-  <!-- Statement -->
   <section class="section"><div class="wrap">
     <div class="statement reveal">
       <span class="eyebrow">Fully customized designs &amp; development</span>
@@ -30,7 +30,6 @@ const tiles = [1, 2, 3, 4, 5, 6, 7, 8];
     </div>
   </div></section>
 
-  <!-- Category showcases -->
   {cats.map((c, ci) => (
     <section class:list={['cat-band', { alt: ci % 2 === 1 }]}>
       <div class="wrap">
@@ -45,20 +44,26 @@ const tiles = [1, 2, 3, 4, 5, 6, 7, 8];
       </div>
       <div class="marquee reveal">
         <div class:list={['marquee-track', { rev: c.rev }]}>
-          {[0, 1].map(() => tiles.map((i) => (
-            <div class="vtile" style={`border-top:4px solid ${c.accent}`}>
-              <div class="glow"></div><div class="lines"></div>
-              <span class="idx">{String(i).padStart(2, '0')}</span>
-              <span class="vtag">Photo</span>
-              <span class="vlabel">Design {String(i).padStart(2, '0')}</span>
-            </div>
-          )))}
+          {c.images.length
+            ? [0, 1].map(() => c.images.map((name) => (
+                <div class="vtile photo" style={`border-top:4px solid ${c.accent}`}>
+                  <img src={`/images/${c.dir}/${encodeURIComponent(name)}`} alt={`${c.name} — PT Korin Technomic`} loading="lazy" />
+                </div>
+              )))
+            : [0, 1].map(() => tiles.map((i) => (
+                <div class="vtile" style={`border-top:4px solid ${c.accent}`}>
+                  <div class="glow"></div><div class="lines"></div>
+                  <span class="idx">{String(i).padStart(2, '0')}</span>
+                  <span class="vtag">Photo</span>
+                  <span class="vlabel">Design {String(i).padStart(2, '0')}</span>
+                </div>
+              )))
+          }
         </div>
       </div>
     </section>
   ))}
 
-  <!-- CTA -->
   <section class="section final"><div class="wrap">
     <h2>Have a design in mind?</h2>
     <p>Send us your drawing, sample or idea — our development team will turn it into a production-ready component.</p>
